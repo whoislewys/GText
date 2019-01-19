@@ -15,7 +15,8 @@ const reg = /(?:(?:(?:(?:F|f)rom (.+)) (?:(?:T|t)o (.+)))|(?:(?:(?:T|t)o (.+)) (
       } else {
 
       }
-
+    } else {
+      message_out = "Sorry, we couldn't understand that! Try 'directions from *location* to *destination*.'"
     }
 
   console.log(message_out);
