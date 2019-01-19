@@ -22,13 +22,6 @@ function sendMessage(messageText, number) {
     .done();
 }
 
-// Receive message from Twilio webhook
-// Params:
-//
-//
-// Returns:
-//
-//
-function receiveMessage() {
-
+module.exports = {
+  sendMessage
 }
