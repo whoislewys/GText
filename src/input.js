@@ -18,6 +18,7 @@ const reg = /(?:(?:(?:(?:F|f)rom (.+)) (?:(?:T|t)o (.+)))|(?:(?:(?:T|t)o (.+)) (
 
     }
 
+  console.log(message_out);
   twilio.sendMessage(message_out, number);
   // return groups;
 }
