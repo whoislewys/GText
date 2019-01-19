@@ -9,9 +9,10 @@ router.get('/', function(req, res, next) {
 router.post('/sms', (req, res) => {
   let body = req.body;
 
-  console.log(body);
-  
-  input.parse(body);
+  message_in = body.Body;
+  number = body.From;
+
+  input.parse(message_in, number);
 
   res.status(200).end();
 });

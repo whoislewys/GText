@@ -7,18 +7,18 @@ const twilio = require('./twilio');
 const google_maps = require('./google_maps');
 const reg = /(?:(?:(?:(?:F|f)rom (.+)) (?:(?:T|t)o (.+)))|(?:(?:(?:T|t)o (.+)) (?:(?:F|f)rom (.+))))/g
 
- async function parse(input) {
-  let groups = reg.exec(input)
+ async function parse(message_in, number) {
+  let groups = reg.exec(message_in)
     if (groups[0]) {
       if (groups[1]) {
-        var message = await google_maps.get_directions(groups[1], groups[2]);
+        var message_out = await google_maps.get_directions(groups[1], groups[2]);
       } else {
 
       }
 
     }
 
-  twilio.sendMessage(message, number);
+  twilio.sendMessage(message_out, number);
   // return groups;
 }
 
