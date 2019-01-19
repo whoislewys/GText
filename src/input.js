@@ -9,7 +9,7 @@ const reg = /(?:(?:(?:(?:F|f)rom (.+)) (?:(?:T|t)o (.+)))|(?:(?:(?:T|t)o (.+)) (
 
  async function parse(message_in, number) {
   let groups = reg.exec(message_in)
-    if (groups[0]) {
+    if (groups) {
       if (groups[1]) {
         var message_out = await google_maps.get_directions(groups[1], groups[2]);
       } else {
