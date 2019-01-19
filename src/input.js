@@ -7,8 +7,9 @@ const twilio = require('./twilio');
 const google_maps = require('./google_maps');
 
 async function parse(input) {
-  
-  // await google_maps.get_directions(origin, destination)
+
+  var message = await google_maps.get_directions(origin, destination);
+  twilio.sendMessage(message, number);
 }
 
 module.exports = {
