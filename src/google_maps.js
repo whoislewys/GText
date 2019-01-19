@@ -28,13 +28,13 @@ function parse(route) {
 			out += '\n' + num + clean_step_split[0] + dur;
 		}
 	}
-	console.log(out);
+	return out
 }
 
-function maps(number, origin, destination) {
-	googleMapsClient.directions({
-		origin: this.origin,
-		destination: this.destination
+function get_directions(origin, destination) {
+	return googleMapsClient.directions({
+		origin: origin,
+		destination: destination
 	})
 	.asPromise()
 	.then(response => parse(response.json.routes[0]))
@@ -44,5 +44,5 @@ function maps(number, origin, destination) {
 }
 
 module.exports = {
-	maps
+	get_directions
 };

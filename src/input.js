@@ -3,8 +3,12 @@
 //   input: input string from SMS
 // Returns:
 //
-function parse(input) {
-  // input is a string, do stuff here
+const twilio = require('./twilio');
+const google_maps = require('./google_maps');
+
+async function parse(input) {
+  
+  // await google_maps.get_directions(origin, destination)
 }
 
 module.exports = {
