@@ -13,7 +13,7 @@ const reg = /(?:(?:(?:(?:F|f)rom (.+)) (?:(?:T|t)o (.+)))|(?:(?:(?:T|t)o (.+)) (
       if (groups[1]) {
         var message = await google_maps.get_directions(groups[1], groups[2]);
       } else {
-
+        var message = await google_maps.get_directions(groups[3], groups[4]);
       }
 
     }
