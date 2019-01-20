@@ -25,7 +25,7 @@ function parse(route) {
 			clean_step = clean_step.replace(/&[nbsp^>]+;/g, ' ')
 			clean_step_split = clean_step.split(/<[^>]+>/);
 			
-			out += '\n' + num + clean_step_split[0] + dur;
+			out += '\n\n' + num + clean_step_split[0] + dur;
 		}
 	}
 	return out
