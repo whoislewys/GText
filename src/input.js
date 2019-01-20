@@ -5,7 +5,7 @@
 //
 const twilio = require('./twilio');
 const google_maps = require('./google_maps');
-const reg = /(?:(?:(?:(?:F|f)rom (.+)) (?:(?:T|t)o (.+)))|(?:(?:(?:T|t)o (.+)) (?:(?:F|f)rom (.+))))/g
+const reg = /(?:(?:(?:(?:F|f)rom (.+)) (?:(?:T|t)o (.+)))|(?:(?:(?:(?:T|t)o(?!.*(?:T|t)o)) (.+)) (?:(?:F|f)rom (.+))))/g
 
  async function parse(message_in, number) {
   let message_out = "Sorry, we couldn't understand that! Try 'directions from *location* to *destination*.'";
@@ -20,7 +20,7 @@ const reg = /(?:(?:(?:(?:F|f)rom (.+)) (?:(?:T|t)o (.+)))|(?:(?:(?:T|t)o (.+)) (
   }
 
   console.log(message_out);
-  twilio.sendMessage(message_out, number);
+  // twilio.sendMessage(message_out, number);
 }
 
 module.exports = {
