@@ -13,7 +13,7 @@ const searchReg = /(?:(?:S|s)earch) (.+)/g
   let message_out = "Sorry, we couldn't understand that! Try 'directions from *location* to *destination*.'";
   let groups = reg.exec(message_in);
   // let search = searchReg.exec(message_in);
-  let search = message_in;
+  let search = message_in.split('search ')[1];
 
   console.log(search);
 
