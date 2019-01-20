@@ -15,13 +15,19 @@ const searchReg = /(?:(?:S|s)earch) (.+)/g
   let search = searchReg.exec(message_in);
 
   if (groups) {
-    if (groups[1]) {
+    if (groups[1] && groups[2]) {
       message_out = await google_maps.get_directions(groups[1], groups[2]);
-    } else {
+    } else if (groups[3] && groups[4]) {
       message_out = await google_maps.get_directions(groups[3], groups[4]);
+<<<<<<< HEAD
     }
   } else if(search) {
     message_out = await google_search.get_result(search[1]);
+=======
+    // } else if (groups[2] || groups[4])
+    //   message_out = 'Where are you at currently?'
+    //}
+>>>>>>> e8a20846138ea69bfc229f88880d5b7ff55e8061
   }
 
   console.log(message_out);
