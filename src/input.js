@@ -13,7 +13,7 @@ const searchReg = /(?:(?:S|s)earch) (.+)/g
   let message_out = "Sorry, we couldn't understand that! Try 'directions from *location* to *destination*.'";
   let groups = reg.exec(message_in);
   // let search = searchReg.exec(message_in);
-  let search = message_in.split('search ')[1];
+  let search = message_in.toLowerCase().split('search ')[1];
 
   console.log(search);
 
@@ -26,7 +26,7 @@ const searchReg = /(?:(?:S|s)earch) (.+)/g
     }
   } else if(search) {
     console.log("Detected Google search...");
-    console.log(search[1]);
+    // console.log(search[1]);
     message_out = await google_search.get_result(search);
   }
 
