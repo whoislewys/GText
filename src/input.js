@@ -15,8 +15,6 @@ const searchReg = /(?:(?:S|s)earch) (.+)/g
   // let search = searchReg.exec(message_in);
   let search = message_in.toLowerCase().split('search ')[1];
 
-  console.log(search);
-
   if (groups) {
     console.log("Detected request for directions...");
     if (groups[1] && groups[2]) {
