@@ -12,6 +12,8 @@ router.post('/sms', (req, res) => {
   message_in = body.Body;
   number = body.From;
 
+  console.log(message_in)
+
   input.parse(message_in, number);
 
   res.status(200).end();

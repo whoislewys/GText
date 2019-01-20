@@ -15,12 +15,14 @@ const searchReg = /(?:(?:S|s)earch) (.+)/g
   let search = searchReg.exec(message_in);
 
   if (groups) {
+    console.log("Detected request for directions...");
     if (groups[1] && groups[2]) {
       message_out = await google_maps.get_directions(groups[1], groups[2]);
     } else if (groups[3] && groups[4]) {
       message_out = await google_maps.get_directions(groups[3], groups[4]);
     }
   } else if(search) {
+    console.log("Detected Google search...");
     message_out = await google_search.get_result(search[1]);
   }
 
