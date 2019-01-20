@@ -23,6 +23,8 @@ const searchReg = /(?:(?:S|s)earch) (.+)/g
     }
   } else if(search) {
     console.log("Detected Google search...");
+    console.log(search);
+    console.log(search[1]);
     message_out = await google_search.get_result(search[1]);
   }
 
