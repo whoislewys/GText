@@ -12,11 +12,13 @@ const reg = /(?:(?:(?:(?:F|f)rom (.+)) (?:(?:T|t)o (.+)))|(?:(?:(?:T|t)o (.+)) (
   let groups = reg.exec(message_in)
 
   if (groups) {
-    if (groups[1]) {
+    if (groups[1] && groups[2]) {
       message_out = await google_maps.get_directions(groups[1], groups[2]);
-    } else {
+    } else if (groups[3] && groups[4]) {
       message_out = await google_maps.get_directions(groups[3], groups[4]);
-    }
+    // } else if (groups[2] || groups[4])
+    //   message_out = 'Where are you at currently?'
+    //}
   }
 
   console.log(message_out);
